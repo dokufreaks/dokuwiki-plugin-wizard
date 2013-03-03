@@ -9,26 +9,31 @@
 // must be run within Dokuwiki
 if (!defined('DOKU_INC')) die();
 
-if (!defined('DOKU_LF')) define('DOKU_LF', "\n");
-if (!defined('DOKU_TAB')) define('DOKU_TAB', "\t");
-if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
-
-require_once DOKU_PLUGIN.'syntax.php';
-
 class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Syntax_Plugin {
+    /**
+     * @return string Syntax mode type
+     */
     public function getType() {
         return 'FIXME: container|baseonly|formatting|substition|protected|disabled|paragraphs';
     }
-
+    /**
+     * @return string Paragraph type
+     */
     public function getPType() {
         return 'FIXME: normal|block|stack';
     }
-
+    /**
+     * @return int Sort order - Low numbers go before high numbers
+     */
     public function getSort() {
         return FIXME;
     }
 
-
+    /**
+     * Connect lookup pattern to lexer.
+     *
+     * @param string $mode Parser mode
+     */
     public function connectTo($mode) {
         $this->Lexer->addSpecialPattern('<FIXME>',$mode,'@@SYNTAX_COMPONENT_NAME@@');
 //        $this->Lexer->addEntryPattern('<FIXME>',$mode,'@@SYNTAX_COMPONENT_NAME@@');
@@ -38,12 +43,29 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Syntax_Plugin {
 //        $this->Lexer->addExitPattern('</FIXME>','@@SYNTAX_COMPONENT_NAME@@');
 //    }
 
+    /**
+     * Handle matches of the @@PLUGIN_NAME@@ syntax
+     *
+     * @param string $match The match of the syntax
+     * @param int    $state The state of the handler
+     * @param int    $pos The position in the document
+     * @param Doku_Handler    $handler The handler
+     * @return array Data for the renderer
+     */
     public function handle($match, $state, $pos, &$handler){
         $data = array();
 
         return $data;
     }
 
+    /**
+     * Render xhtml output or metadata
+     *
+     * @param string         $mode      Renderer mode (supported modes: xhtml)
+     * @param Doku_Renderer  $renderer  The renderer
+     * @param array          $data      The data from the handler() function
+     * @return bool If rendering was successful.
+     */
     public function render($mode, &$renderer, $data) {
         if($mode != 'xhtml') return false;
 

@@ -7,24 +7,35 @@
  */
 
 // must be run within Dokuwiki
-if (!defined('DOKU_INC')) die();
-
-if (!defined('DOKU_LF')) define('DOKU_LF', "\n");
-if (!defined('DOKU_TAB')) define('DOKU_TAB', "\t");
-if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
-
-require_once DOKU_PLUGIN.'admin.php';
+if(!defined('DOKU_INC')) die();
 
 class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Admin_Plugin {
 
-    public function getMenuSort() { return FIXME; }
-    public function forAdminOnly() { return false; }
+    /**
+     * @return int sort number in admin menu
+     */
+    public function getMenuSort() {
+        return FIXME;
+    }
 
+    /**
+     * @return bool true if only access for superuser, false is for superusers and moderators
+     */
+    public function forAdminOnly() {
+        return false;
+    }
+
+    /**
+     * Should carry out any processing required by the plugin.
+     */
     public function handle() {
     }
 
+    /**
+     * Render HTML output, e.g. helpful text and a form
+     */
     public function html() {
-        ptln('<h1>' . $this->getLang('menu') . '</h1>');
+        ptln('<h1>'.$this->getLang('menu').'</h1>');
     }
 }
 

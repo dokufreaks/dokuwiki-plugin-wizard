@@ -7,13 +7,31 @@
  */
 
 // must be run within Dokuwiki
-if (!defined('DOKU_INC')) die();
-
-if (!defined('DOKU_LF')) define('DOKU_LF', "\n");
-if (!defined('DOKU_TAB')) define('DOKU_TAB', "\t");
-if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
+if(!defined('DOKU_INC')) die();
 
 class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Plugin {
+
+    /**
+     * Return info about supported methods in this Helper Plugin
+     *
+     * @return array of public methods
+     */
+    public function getMethods() {
+        return array(
+            array(
+                'name'   => 'getThreads',
+                'desc'   => 'returns pages with discussion sections, sorted by recent comments',
+                'params' => array(
+                    'namespace'         => 'string',
+                    'number (optional)' => 'integer'
+                ),
+                'return' => array('pages' => 'array')
+            ),
+            array(
+                // and more supported methods...
+            )
+        );
+    }
 
 }
 

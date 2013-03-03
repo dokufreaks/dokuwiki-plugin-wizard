@@ -7,19 +7,28 @@
  */
 
 // must be run within Dokuwiki
-if (!defined('DOKU_INC')) die();
-
-if (!defined('DOKU_LF')) define('DOKU_LF', "\n");
-if (!defined('DOKU_TAB')) define('DOKU_TAB', "\t");
-if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
-
-require_once DOKU_PLUGIN.'action.php';
+if(!defined('DOKU_INC')) die();
 
 class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Action_Plugin {
 
+    /**
+     * Registers a callback function for a given event
+     *
+     * @param Doku_Event_Handler $controller DokuWiki's event controller object
+     * @return void
+     */
     public function register(Doku_Event_Handler &$controller) {
 @@REGISTER@@
     }
+
+    /**
+     * [Custom event handler which performs action]
+     *
+     * @param Doku_Event $event  event object by reference
+     * @param mixed      $param  [the parameters passed as fifth argument to register_hook() when this
+     *                           handler was registered]
+     * @return void
+     */
 @@HANDLERS@@
 }
 

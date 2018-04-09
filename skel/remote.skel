@@ -9,22 +9,10 @@
 // must be run within Dokuwiki
 if (!defined('DOKU_INC')) die();
 
+/**
+ * All public methods of this class are automagically public methods of your API
+ */
 class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Remote_Plugin {
-
-    /**
-     * Register RPC methods and their arguments
-     */
-    public function _getMethods() {
-        return array(
-            // FIXME adjust
-            'plugin.@@PLUGIN_NAME@@.myFunction' => array(
-                'args'   => array('string'),
-                'return' => 'string',
-                'doc'    => 'Description of the function'
-            ),
-            // add more methods here
-        );
-    }
 
     /**
      * Example function

@@ -25,6 +25,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Action_Plugin
     /**
      * [Custom event handler which performs action]
      *
+     * Called for event: 
+     *
      * @param Doku_Event $event  event object by reference
      * @param mixed      $param  [the parameters passed as fifth argument to register_hook() when this
      *                           handler was registered]

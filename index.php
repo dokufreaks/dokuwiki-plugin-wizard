@@ -30,7 +30,7 @@ function create_bundle($conf) {
                         foreach($events as $event) {
                             if($event) {
                                 $register .= '       $controller->register_hook(\''.$event.'\', \'FIXME\', $this, \'handle_'.strtolower($event).'\');';
-                                $handler .= '    public function handle_'.strtolower($event).'(Doku_Event &$event, $param) {'."\n"
+                                $handler .= '    public function handle_'.strtolower($event).'(Doku_Event $event, $param) {'."\n"
                                     .'    }'."\n";
                             }
                         }

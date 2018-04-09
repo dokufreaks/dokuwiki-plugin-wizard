@@ -88,6 +88,13 @@ function create_bundle($conf) {
         'skel' => $skel
     );
 
+    // LICENSE
+    $skel     = file_get_contents('./skel/LICENSE.skel');
+    $bundle[] = array(
+        'path' => 'LICENSE',
+        'skel' => $skel
+    );
+
     // configuration
     if(!empty($conf['use_config'])) {
         $skel     = file_get_contents('./skel/conf/default.skel');

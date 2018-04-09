@@ -186,6 +186,7 @@ if(isset($_REQUEST['plugin_wiz_create'])) {
 <html>
 <head>
     <title>DokuWiki Plugin Wizard</title>
+    <script>var ACTION_EVENTS=<?php echo json_encode(array_map('trim',file('events.txt')))?>;</script>
     <script rel="text/javascript" charset="utf-8" src="js/jquery.js"></script>
     <script rel="text/javascript" charset="utf-8" src="js/script.js"></script>
     <script type="text/javascript" src="js/plugins/autocomplete/lib/jquery.bgiframe.min.js"></script>

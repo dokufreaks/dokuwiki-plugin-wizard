@@ -185,8 +185,7 @@ var plugin_wiz = {
                 div.append('<label for="' + input_name + '">Events:</label>');
                 div.append('<input type="text" class="autocomplete edit validate_string" value="" name="' + input_name + '" />');
 
-                data = plugin_wiz.action_plugin_events.split(',');
-                $('input.autocomplete', div).autocomplete(data, { 'multiple': true, 'multipleSeparator': ',', 'width': '300' } );
+                $('input.autocomplete', div).autocomplete(ACTION_EVENTS, { 'multiple': true, 'multipleSeparator': ',', 'width': '300' } );
 
                 $('input.autocomplete').blur(function() {
                         $(this).removeClass('focus');

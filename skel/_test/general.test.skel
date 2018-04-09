@@ -5,12 +5,14 @@
  * @group plugin_@@PLUGIN_NAME@@
  * @group plugins
  */
-class general_plugin_@@PLUGIN_NAME@@_test extends DokuWikiTest {
+class general_plugin_@@PLUGIN_NAME@@_test extends DokuWikiTest
+{
 
     /**
      * Simple test to make sure the plugin.info.txt is in correct format
      */
-    public function test_plugininfo() {
+    public function test_plugininfo()
+    {
         $file = __DIR__.'/../plugin.info.txt';
         $this->assertFileExists($file);
 
@@ -35,7 +37,8 @@ class general_plugin_@@PLUGIN_NAME@@_test extends DokuWikiTest {
      * Test to ensure that every conf['...'] entry in conf/default.php has a corresponding meta['...'] entry in
      * conf/metadata.php.
      */
-    public function test_plugin_conf() {
+    public function test_plugin_conf()
+    {
         $conf_file = __DIR__.'/../conf/default.php';
         if (file_exists($conf_file)){
             include($conf_file);

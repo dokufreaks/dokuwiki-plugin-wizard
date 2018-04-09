@@ -9,13 +9,15 @@
 // must be run within Dokuwiki
 if(!defined('DOKU_INC')) die();
 
-class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
+class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin
+{
 
 
     /**
      * Constructor.
      */
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct(); // for compatibility
 
         // FIXME set capabilities accordingly
@@ -40,8 +42,9 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
     /**
      * Log off the current user [ OPTIONAL ]
      */
-    //public function logOff() {
-    //}
+    // public function logOff()
+    // {
+    // }
 
     /**
      * Do all authentication [ OPTIONAL ]
@@ -51,7 +54,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
      * @param   bool    $sticky  Cookie should not expire
      * @return  bool             true on successful auth
      */
-    //public function trustExternal($user, $pass, $sticky = false) {
+    //public function trustExternal($user, $pass, $sticky = false)
+    //{
         /* some example:
 
         global $USERINFO;
@@ -82,7 +86,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
      * @param   string $pass the clear text password
      * @return  bool
      */
-    public function checkPass($user, $pass) {
+    public function checkPass($user, $pass)
+    {
         // FIXME implement password check
         return false; // return true if okay
     }
@@ -101,7 +106,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
      * @return  array containing user data or false
      * @param   bool $requireGroups whether or not the returned data must include groups
      */
-    public function getUserData($user, $requireGroups=true) {
+    public function getUserData($user, $requireGroups=true)
+    {
         // FIXME implement
         return false;
     }
@@ -124,7 +130,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
      * @param  null|array $grps
      * @return bool|null
      */
-    //public function createUser($user, $pass, $name, $mail, $grps = null) {
+    //public function createUser($user, $pass, $name, $mail, $grps = null)
+    //{
         // FIXME implement
     //    return null;
     //}
@@ -138,7 +145,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
      * @param   array  $changes array of field/value pairs to be changed (password will be clear text)
      * @return  bool
      */
-    //public function modifyUser($user, $changes) {
+    //public function modifyUser($user, $changes)
+    //{
         // FIXME implement
     //    return false;
     //}
@@ -151,7 +159,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
      * @param   array  $users
      * @return  int    number of users deleted
      */
-    //public function deleteUsers($users) {
+    //public function deleteUsers($users)
+    //{
         // FIXME implement
     //    return false;
     //}
@@ -166,7 +175,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
      * @param   array $filter    array of field/pattern pairs, null for no filter
      * @return  array list of userinfo (refer getUserData for internal userinfo details)
      */
-    //public function retrieveUsers($start = 0, $limit = 0, $filter = null) {
+    //public function retrieveUsers($start = 0, $limit = 0, $filter = null)
+    //{
         // FIXME implement
     //    return array();
     //}
@@ -180,7 +190,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
      * @param  array $filter array of field/pattern pairs, empty array for no filter
      * @return int
      */
-    //public function getUserCount($filter = array()) {
+    //public function getUserCount($filter = array())
+    //{
         // FIXME implement
     //    return 0;
     //}
@@ -193,7 +204,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
      * @param   string $group
      * @return  bool
      */
-    //public function addGroup($group) {
+    //public function addGroup($group)
+    //{
         // FIXME implement
     //    return false;
     //}
@@ -207,7 +219,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
      * @param   int $limit
      * @return  array
      */
-    //public function retrieveGroups($start = 0, $limit = 0) {
+    //public function retrieveGroups($start = 0, $limit = 0)
+    //{
         // FIXME implement
     //    return array();
     //}
@@ -220,7 +233,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
      *
      * @return bool
      */
-    public function isCaseSensitive() {
+    public function isCaseSensitive()
+    {
         return true;
     }
 
@@ -236,7 +250,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
      * @param string $user username
      * @return string the cleaned username
      */
-    public function cleanUser($user) {
+    public function cleanUser($user)
+    {
         return $user;
     }
 
@@ -254,7 +269,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
      * @param  string $group groupname
      * @return string the cleaned groupname
      */
-    public function cleanGroup($group) {
+    public function cleanGroup($group)
+    {
         return $group;
     }
 
@@ -282,7 +298,8 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Auth_Plugin {
      * @param  string $user - The username
      * @return bool
      */
-    //public function useSessionCache($user) {
+    //public function useSessionCache($user)
+    //{
       // FIXME implement
     //}
 }

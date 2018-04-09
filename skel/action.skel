@@ -9,7 +9,8 @@
 // must be run within Dokuwiki
 if(!defined('DOKU_INC')) die();
 
-class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Action_Plugin {
+class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Action_Plugin
+{
 
     /**
      * Registers a callback function for a given event

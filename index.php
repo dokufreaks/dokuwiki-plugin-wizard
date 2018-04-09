@@ -45,10 +45,10 @@ function create_bundle($conf) {
 
             list($tmp, $name) = explode('_', $plugin, 2);
 
-            $component['path']                           = ($name) ? $type.'/'.$name.'.php' : $type.'.php';
+            $component['path']                           = $name ? $type.'/'.$name.'.php' : $type.'.php';
             $search_replace['@@PLUGIN_COMPONENT_NAME@@'] = $type.'_plugin_'.$plugin;
             $search_replace['@@SYNTAX_COMPONENT_NAME@@'] = 'plugin_'.$plugin;
-            $search_replace['@@INFO_TXT_PATH@@']         = ($name) ? '/../plugin.info.txt' : '/plugin.info.txt';
+            $search_replace['@@INFO_TXT_PATH@@']         = $name ? '/../plugin.info.txt' : '/plugin.info.txt';
 
             // use special skeleton for xhtml renderer
             if(isset($data['inherits']) && $data['inherits'] == 'Doku_Renderer_xhtml') {

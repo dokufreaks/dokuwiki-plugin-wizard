@@ -73,4 +73,3 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Syntax_Plugin {
     }
 }
 
-// vim:ts=4:sw=4:et:

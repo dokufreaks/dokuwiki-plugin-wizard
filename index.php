@@ -29,8 +29,8 @@ function create_bundle($conf) {
                         $events   = explode(',', $data['events']);
                         foreach($events as $event) {
                             if($event) {
-                                $register .= "\n".'       $controller->register_hook(\''.$event.'\', \'FIXME\', $this, \'handle_'.strtolower($event).'\');';
-                                $handler .= "\n".'    public function handle_'.strtolower($event).'(Doku_Event &$event, $param) {'."\n"
+                                $register .= '       $controller->register_hook(\''.$event.'\', \'FIXME\', $this, \'handle_'.strtolower($event).'\');';
+                                $handler .= '    public function handle_'.strtolower($event).'(Doku_Event &$event, $param) {'."\n"
                                     .'    }'."\n";
                             }
                         }

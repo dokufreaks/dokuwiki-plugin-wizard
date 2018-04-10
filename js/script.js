@@ -183,11 +183,7 @@ var plugin_wiz = {
                            '  <option value="Doku_Renderer">Doku_Renderer</option>'+
                            '</select>');
                 break;
-            case 'syntax':
-            case 'helper':
-            case 'admin':
-            case 'remote':
-            case 'auth':
+            default:
                 var input_name  = 'plugin[components][' + plugin_type + '][' + plugin_name + ']';
                 div.append('<input type="hidden" value="" name="' + input_name + '" />');
                 break;

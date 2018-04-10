@@ -75,7 +75,9 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Syntax_Plugin
      */
     public function render($mode, Doku_Renderer $renderer, $data)
     {
-        if($mode != 'xhtml') return false;
+        if($mode != 'xhtml') {
+            return false;
+        }
 
         return true;
     }

@@ -8,23 +8,6 @@ var plugin_wiz = {
     ajax__plugin_component_type: null,
     ajax__plugin_layout: null,
 
-    action_plugin_events: 'ACTION_ACT_PREPROCESS,ACTION_EXPORT_POSTPROCESS,ACTION_HANDLE_SUBSCRIBE,ACTION_HEADERS_SEND'
-                        + ',ACTION_SHOW_REDIRECT,AJAX_CALL_UNKNOWN,AUTH_LOGIN_CHECK,AUTH_USER_CHANGE,COMMON_NOTIFY_ADDRESSLIST'
-                        + ',COMMON_PAGETPL_LOAD,COMMON_WORDBLOCK_BLOCKED,DETAIL_STARTED,DOKUWIKI_DONE,DOKUWIKI_STARTED'
-                        + ',FEED_DATA_PROCESS,FEED_ITEM_ADD,FEED_MODE_UNKNOWN,FEED_OPTS_POSTPROCESS,FETCH_MEDIA_STATUS'
-                        + ',FULLTEXT_SNIPPET_CREATE,HTML_CONFLICTFORM_OUTPUT,HTML_DRAFTFORM_OUTPUT,HTML_EDITFORM_OUTPUT'
-                        + ',HTML_EDIT_FORMSELECTION,HTML_LOGINFORM_OUTPUT,HTML_PAGE_FROMTEMPLATE,HTML_RECENTFORM_OUTPUT'
-                        + ',HTML_REGISTERFORM_OUTPUT,HTML_RESENDPWDFORM_OUTPUT,HTML_REVISIONSFORM_OUTPUT,HTML_SECEDIT_BUTTON'
-                        + ',HTML_SUBSCRIBEFORM_OUTPUT,HTML_UPDATEPROFILEFORM_OUTPUT,HTML_UPLOADFORM_OUTPUT,HTTPCLIENT_REQUEST_SEND'
-                        + ',INDEXER_PAGE_ADD,INDEXER_TASKS_RUN,INDEXER_TEXT_PREPARE,INDEXER_VERSION_GET,INIT_LANG_LOAD'
-                        + ',IO_NAMESPACE_CREATED,IO_NAMESPACE_DELETED,IO_WIKIPAGE_READ,IO_WIKIPAGE_WRITE,JS_CACHE_USE'
-                        + ',MAIL_MESSAGE_SEND,MEDIAMANAGER_CONTENT_OUTPUT,MEDIAMANAGER_STARTED,MEDIA_DELETE_FILE'
-                        + ',MEDIA_SENDFILE,MEDIA_UPLOAD_FINISH,PAGEUTILS_ID_HIDEPAGE,PARSER_CACHE_USE,PARSER_HANDLER_DONE'
-                        + ',PARSER_METADATA_RENDER,PARSER_WIKITEXT_PREPROCESS,PLUGIN_CONFIG_PLUGINLIST,PLUGIN_PLUGINMANAGER_PLUGINLIST'
-                        + ',RENDERER_CONTENT_POSTPROCESS,RPC_CALL_ADD,SEARCH_QUERY_FULLPAGE,SEARCH_QUERY_PAGELOOKUP,SITEMAP_GENERATE'
-                        + ',SITEMAP_PING,TOOLBAR_DEFINE,TPL_ACT_RENDER,TPL_ACT_UNKNOWN,TPL_CONTENT_DISPLAY,TPL_IMG_DISPLAY'
-                        + ',TPL_METAHEADER_OUTPUT,TPL_TOC_RENDER,XMLRPC_CALLBACK_REGISTER',
-
     init: function() {
         plugin_wiz.ajax__plugin_layout = $('#ajax__plugin_layout');
         plugin_wiz.ajax__plugin_component_type = $('#ajax__plugin_component_type');
@@ -185,8 +168,7 @@ var plugin_wiz = {
                 div.append('<label for="' + input_name + '">Events:</label>');
                 div.append('<input type="text" class="autocomplete edit validate_string" value="" name="' + input_name + '" />');
 
-                data = plugin_wiz.action_plugin_events.split(',');
-                $('input.autocomplete', div).autocomplete(data, { 'multiple': true, 'multipleSeparator': ',', 'width': '300' } );
+                $('input.autocomplete', div).autocomplete(ACTION_EVENTS, { 'multiple': true, 'multipleSeparator': ',', 'width': '300' } );
 
                 $('input.autocomplete').blur(function() {
                         $(this).removeClass('focus');

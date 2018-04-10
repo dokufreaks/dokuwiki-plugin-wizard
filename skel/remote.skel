@@ -7,7 +7,9 @@
  */
 
 // must be run within Dokuwiki
-if (!defined('DOKU_INC')) die();
+if (!defined('DOKU_INC')) {
+    die();
+}
 
 /**
  * All public methods of this class are automagically public methods of your API
@@ -22,7 +24,7 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Remote_Plugin
     {
         // FIXME handle security in your method!
         $id = cleanID($id);
-        if(auth_quickaclcheck($id) < AUTH_READ){
+        if (auth_quickaclcheck($id) < AUTH_READ) {
             throw new RemoteAccessDeniedException('You are not allowed to read this file', 111);
         }
 

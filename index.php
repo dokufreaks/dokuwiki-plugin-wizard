@@ -29,9 +29,10 @@ function create_bundle($conf) {
                         $events   = explode(',', $data['events']);
                         foreach($events as $event) {
                             if($event) {
-                                $register .= '       $controller->register_hook(\''.$event.'\', \'FIXME\', $this, \'handle_'.strtolower($event).'\');';
-                                $handler .= '    public function handle_'.strtolower($event).'(Doku_Event $event, $param) {'."\n"
-                                    .'    }'."\n";
+                                $register .= '        $controller->register_hook(\''.$event.'\', \'FIXME\', $this, \'handle_'.strtolower($event).'\');';
+                                $handler .= '    public function handle_'.strtolower($event).'(Doku_Event $event, $param)'."\n"
+                                    . "    {\n"
+                                    . "    }\n";
                             }
                         }
                         $search_replace['@@REGISTER@@'] = $register."\n   ";

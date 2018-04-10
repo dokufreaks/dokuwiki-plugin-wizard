@@ -7,7 +7,9 @@
  */
 
 // must be run within Dokuwiki
-if(!defined('DOKU_INC')) die();
+if (!defined('DOKU_INC')) {
+    die();
+}
 
 class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Admin_Plugin
 {
@@ -41,7 +43,7 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Admin_Plugin
      */
     public function html()
     {
-        ptln('<h1>'.$this->getLang('menu').'</h1>');
+        ptln('<h1>' . $this->getLang('menu') . '</h1>');
     }
 }
 

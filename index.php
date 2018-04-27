@@ -29,9 +29,10 @@ function create_bundle($conf) {
                         $events   = explode(',', $data['events']);
                         foreach($events as $event) {
                             if($event) {
-                                $register .= "\n".'       $controller->register_hook(\''.$event.'\', \'FIXME\', $this, \'handle_'.strtolower($event).'\');';
-                                $handler .= "\n".'    public function handle_'.strtolower($event).'(Doku_Event &$event, $param) {'."\n"
-                                    .'    }'."\n";
+                                $register .= '        $controller->register_hook(\''.$event.'\', \'FIXME\', $this, \'handle_'.strtolower($event).'\');';
+                                $handler .= '    public function handle_'.strtolower($event).'(Doku_Event $event, $param)'."\n"
+                                    . "    {\n"
+                                    . "    }\n";
                             }
                         }
                         $search_replace['@@REGISTER@@'] = $register."\n   ";
@@ -45,10 +46,10 @@ function create_bundle($conf) {
 
             list($tmp, $name) = explode('_', $plugin, 2);
 
-            $component['path']                           = ($name) ? $type.'/'.$name.'.php' : $type.'.php';
+            $component['path']                           = $name ? $type.'/'.$name.'.php' : $type.'.php';
             $search_replace['@@PLUGIN_COMPONENT_NAME@@'] = $type.'_plugin_'.$plugin;
             $search_replace['@@SYNTAX_COMPONENT_NAME@@'] = 'plugin_'.$plugin;
-            $search_replace['@@INFO_TXT_PATH@@']         = ($name) ? '/../plugin.info.txt' : '/plugin.info.txt';
+            $search_replace['@@INFO_TXT_PATH@@']         = $name ? '/../plugin.info.txt' : '/plugin.info.txt';
 
             // use special skeleton for xhtml renderer
             if(isset($data['inherits']) && $data['inherits'] == 'Doku_Renderer_xhtml') {
@@ -85,6 +86,13 @@ function create_bundle($conf) {
     );
     $bundle[] = array(
         'path' => 'README',
+        'skel' => $skel
+    );
+
+    // LICENSE
+    $skel     = file_get_contents('./skel/LICENSE.skel');
+    $bundle[] = array(
+        'path' => 'LICENSE',
         'skel' => $skel
     );
 
@@ -186,10 +194,10 @@ if(isset($_REQUEST['plugin_wiz_create'])) {
 <html>
 <head>
     <title>DokuWiki Plugin Wizard</title>
-    <script rel="text/javascript" charset="utf-8" src="js/jquery.js"></script>
-    <script rel="text/javascript" charset="utf-8" src="js/script.js"></script>
-    <script type="text/javascript" src="js/plugins/autocomplete/lib/jquery.bgiframe.min.js"></script>
-    <script type="text/javascript" src="js/plugins/autocomplete/jquery.autocomplete.js"></script>
+    <script type="text/javascript" charset="utf-8">var ACTION_EVENTS=<?php echo json_encode(array_map('trim',file('events.txt')))?>;</script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/script.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/plugins/autocomplete/jquery.autocomplete.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
     <link rel="stylesheet" href="js/plugins/autocomplete/jquery.autocomplete.css" type="text/css"/>
@@ -281,6 +289,7 @@ if(isset($_REQUEST['plugin_wiz_create'])) {
                 <option value="admin">admin</option>
                 <option value="remote">remote</option>
                 <option value="auth">auth</option>
+                <option value="cli">cli</option>
             </select>
             <input type="button" name="ajax__btn_add_plugin_component" id="ajax__btn_add_plugin_component" value="add"/>
 

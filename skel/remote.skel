@@ -7,32 +7,24 @@
  */
 
 // must be run within Dokuwiki
-if (!defined('DOKU_INC')) die();
+if (!defined('DOKU_INC')) {
+    die();
+}
 
-class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Remote_Plugin {
-
-    /**
-     * Register RPC methods and their arguments
-     */
-    public function _getMethods() {
-        return array(
-            // FIXME adjust
-            'plugin.@@PLUGIN_NAME@@.myFunction' => array(
-                'args'   => array('string'),
-                'return' => 'string',
-                'doc'    => 'Description of the function'
-            ),
-            // add more methods here
-        );
-    }
+/**
+ * All public methods of this class are automagically public methods of your API
+ */
+class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Remote_Plugin
+{
 
     /**
      * Example function
      */
-    public function myExample($id) {
+    public function myExample($id)
+    {
         // FIXME handle security in your method!
         $id = cleanID($id);
-        if(auth_quickaclcheck($id) < AUTH_READ){
+        if (auth_quickaclcheck($id) < AUTH_READ) {
             throw new RemoteAccessDeniedException('You are not allowed to read this file', 111);
         }
 
@@ -40,4 +32,3 @@ class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Remote_Plugin {
     }
 }
 
-// vim:ts=4:sw=4:et:

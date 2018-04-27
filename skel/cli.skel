@@ -1,0 +1,57 @@
+<?php
+/**
+ * DokuWiki Plugin @@PLUGIN_NAME@@ (CLI Component)
+ *
+ * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
+ * @author  @@AUTHOR_NAME@@ <@@AUTHOR_MAIL@@>
+ */
+
+// must be run within Dokuwiki
+if (!defined('DOKU_INC')) {
+    die();
+}
+
+use splitbrain\phpcli\Options;
+
+class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_CLI_Plugin
+{
+
+    /**
+     * Register options and arguments on the given $options object
+     *
+     * @param Options $options
+     *
+     * @return void
+     */
+    protected function setup(Options $options)
+    {
+        $options->setHelp('FIXME: What does this CLI do?');
+
+        // main arguments
+        $options->registerArgument('FIXME:argumentName', 'FIXME:argument description', 'FIXME:required? true|false');
+
+        // options
+        // $options->registerOption('FIXME:longOptionName', 'FIXME: helptext for option', 'FIXME: optional shortkey', 'FIXME:needs argument? true|false', 'FIXME:if applies only to subcommand: subcommandName');
+
+        // sub-commands and their arguments
+        // $options->registerCommand('FIXME:subcommandName', 'FIXME:subcommand description');
+        // $options->registerArgument('FIXME:subcommandArgumentName', 'FIXME:subcommand-argument description', 'FIXME:required? true|false', 'FIXME:subcommandName');
+    }
+
+    /**
+     * Your main program
+     *
+     * Arguments and options have been parsed when this is run
+     *
+     * @param Options $options
+     *
+     * @return void
+     */
+    protected function main(Options $options)
+    {
+        // $command = $options->getCmd()
+        // $arguments = $options->getArgs()
+    }
+
+}
+

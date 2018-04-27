@@ -7,17 +7,23 @@
  */
 
 // must be run within Dokuwiki
-if (!defined('DOKU_INC')) die();
+if (!defined('DOKU_INC')) {
+    die();
+}
 
-class @@PLUGIN_COMPONENT_NAME@@ extends Doku_Renderer_xhtml {
+class @@PLUGIN_COMPONENT_NAME@@ extends Doku_Renderer_xhtml
+{
 
     /**
      * Make available as XHTML replacement renderer
      
      * @param string $format requested format
      */
-    public function canRender($format){
-        if($format == 'xhtml') return true;
+    public function canRender($format)
+    {
+        if ($format == 'xhtml') {
+            return true;
+        }
         return false;
     }
 

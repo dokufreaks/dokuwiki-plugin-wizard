@@ -7,16 +7,20 @@
  */
 
 // must be run within Dokuwiki
-if (!defined('DOKU_INC')) die();
+if (!defined('DOKU_INC')) {
+    die();
+}
 
-require_once DOKU_INC.'inc/parser/renderer.php';
+require_once DOKU_INC . 'inc/parser/renderer.php';
 
-class @@PLUGIN_COMPONENT_NAME@@ extends Doku_Renderer {
+class @@PLUGIN_COMPONENT_NAME@@ extends Doku_Renderer
+{
 
     /**
      * The format this renderer produces
      */
-    public function getFormat(){
+    public function getFormat()
+    {
         return '@@PLUGIN_NAME@@';
     }
 

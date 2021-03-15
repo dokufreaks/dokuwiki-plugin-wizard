@@ -156,13 +156,13 @@ function create_bundle($conf) {
             'skel' => $skel
         );
 
-        $skel     = file_get_contents('./skel/travis.skel');
+        $skel     = file_get_contents('./skel/.github/workflows/phpTestLinux.skel');
         $skel     = str_replace(
             array_keys($search_replace),
             array_values($search_replace), $skel
         );
         $bundle[] = array(
-            'path' => '.travis.yml',
+            'path' => '.github/workflows/phpTestLinux.yml',
             'skel' => $skel
         );
     }

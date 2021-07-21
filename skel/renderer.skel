@@ -5,20 +5,10 @@
  * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
  * @author  @@AUTHOR_NAME@@ <@@AUTHOR_MAIL@@>
  */
-
-// must be run within Dokuwiki
-if (!defined('DOKU_INC')) {
-    die();
-}
-
-require_once DOKU_INC . 'inc/parser/renderer.php';
-
 class @@PLUGIN_COMPONENT_NAME@@ extends Doku_Renderer
 {
 
-    /**
-     * The format this renderer produces
-     */
+    /** @inheritDoc */
     public function getFormat()
     {
         return '@@PLUGIN_NAME@@';

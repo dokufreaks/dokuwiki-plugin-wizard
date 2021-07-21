@@ -5,13 +5,7 @@
  * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
  * @author  @@AUTHOR_NAME@@ <@@AUTHOR_MAIL@@>
  */
-
-// must be run within Dokuwiki
-if (!defined('DOKU_INC')) {
-    die();
-}
-
-class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Plugin
+class @@PLUGIN_COMPONENT_NAME@@ extends \dokuwiki\Extension\Plugin
 {
 
 }

@@ -5,20 +5,13 @@
  * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
  * @author  @@AUTHOR_NAME@@ <@@AUTHOR_MAIL@@>
  */
-
-// must be run within Dokuwiki
-if (!defined('DOKU_INC')) {
-    die();
-}
-
-/**
- * All public methods of this class are automagically public methods of your API
- */
-class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Remote_Plugin
+class @@PLUGIN_COMPONENT_NAME@@ extends \dokuwiki\Extension\RemotePlugin
 {
 
     /**
      * Example function
+     *
+     * All public methods become automatically part of the API
      */
     public function myExample($id)
     {

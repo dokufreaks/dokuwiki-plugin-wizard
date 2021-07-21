@@ -5,45 +5,20 @@
  * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
  * @author  @@AUTHOR_NAME@@ <@@AUTHOR_MAIL@@>
  */
-
-// must be run within Dokuwiki
-if (!defined('DOKU_INC')) {
-    die();
-}
-
-class @@PLUGIN_COMPONENT_NAME@@ extends DokuWiki_Admin_Plugin
+class @@PLUGIN_COMPONENT_NAME@@ extends \dokuwiki\Extension\AdminPlugin
 {
 
-    /**
-     * @return int sort number in admin menu
-     */
-    public function getMenuSort()
-    {
-        return FIXME;
-    }
-
-    /**
-     * @return bool true if only access for superuser, false is for superusers and moderators
-     */
-    public function forAdminOnly()
-    {
-        return false;
-    }
-
-    /**
-     * Should carry out any processing required by the plugin.
-     */
+    /** @inheritDoc */
     public function handle()
     {
-
+        // FIXME data processing
     }
 
-    /**
-     * Render HTML output, e.g. helpful text and a form
-     */
+    /** @inheritDoc */
     public function html()
     {
-        ptln('<h1>' . $this->getLang('menu') . '</h1>');
+        // FIXME render output
+        echo '<h1>' . $this->getLang('menu') . '</h1>';
     }
 }
 

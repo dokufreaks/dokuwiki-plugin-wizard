@@ -10,6 +10,8 @@ function create_bundle($conf) {
         '@@PLUGIN_NAME@@' => $conf['name'],
         '@@PLUGIN_DESC@@' => $conf['desc'],
         '@@PLUGIN_URL@@'  => $conf['url'],
+        '@@PLUGIN_TYPE@@' => 'plugin',
+        '@@INSTALL_DIR@@' => 'plugins',
         '@@DATE@@'        => $conf['date'],
 
     );

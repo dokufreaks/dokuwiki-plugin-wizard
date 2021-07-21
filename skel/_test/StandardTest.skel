@@ -2,6 +2,8 @@
 
 namespace dokuwiki\@@PLUGIN_TYPE@@\@@PLUGIN_NAME@@\test;
 
+use DokuWikiTest;
+
 /**
  * FIXME tests for the @@PLUGIN_NAME@@ @@PLUGIN_TYPE@@
  *

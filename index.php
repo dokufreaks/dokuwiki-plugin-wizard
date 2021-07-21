@@ -148,13 +148,13 @@ function create_bundle($conf) {
 
     // unit tests
     if(!empty($conf['use_tests'])) {
-        $skel     = file_get_contents('./skel/_test/general.test.skel');
+        $skel     = file_get_contents('./skel/_test/GeneralTest.skel');
         $skel     = str_replace(
             array_keys($search_replace),
             array_values($search_replace), $skel
         );
         $bundle[] = array(
-            'path' => '_test/general.test.php',
+            'path' => '_test/GeneralTest.php',
             'skel' => $skel
         );
 
